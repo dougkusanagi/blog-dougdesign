@@ -49,16 +49,16 @@
             Blog
         </a>
 
-        <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/tags">
-            Tags
+        <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/categories">
+            Categorias
         </a>
 
-        <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/projects">
+        {{-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/projects">
             Projects
-        </a>
+        </a> --}}
 
         <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/about">
-            About
+            Sobre
         </a>
 
         <button aria-label="Search">
@@ -110,20 +110,20 @@
                 </div>
 
                 <div class="px-12 py-4">
-                    <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="/tags">
-                        Tags
+                    <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="/categories">
+                        Categorias
                     </a>
                 </div>
 
-                <div class="px-12 py-4">
+                {{-- <div class="px-12 py-4">
                     <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="/projects">
                         Projects
                     </a>
-                </div>
+                </div> --}}
 
                 <div class="px-12 py-4">
                     <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="/about">
-                        About
+                        Sobre
                     </a>
                 </div>
             </nav>

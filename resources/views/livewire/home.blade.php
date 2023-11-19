@@ -7,7 +7,8 @@
             </h1>
 
             <p class="text-lg leading-7 text-gray-500 dark:text-gray-400">
-                A blog created with the TALL Stack
+                Um blog desenvolvido na <a href="https://tallstack.dev/" target="_blank" class="underline">TALL
+                    Stack</a>
             </p>
         </div>
 
@@ -34,13 +35,24 @@
 
                                     <div class="flex flex-wrap">
                                         <a class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                                            href="/tags/next-js">next-js</a><a
-                                            class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                                            href="/tags/tailwind">tailwind</a><a
-                                            class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                                            href="/tags/guide">guide</a><a
-                                            class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                                            href="/tags/feature">feature</a>
+                                            href="/tags/next-js">
+                                            next-js
+                                        </a>
+
+                                        <a class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                                            href="/tags/tailwind">
+                                            tailwind
+                                        </a>
+
+                                        <a class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                                            href="/tags/guide">
+                                            guide
+                                        </a>
+
+                                        <a class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                                            href="/tags/feature">
+                                            feature
+                                        </a>
                                     </div>
                                 </div>
 
@@ -67,7 +79,9 @@
 
     <div class="flex justify-end text-base font-medium leading-6">
         <a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" aria-label="All posts"
-            href="/blog">All Posts →</a>
+            href="/blog">
+            Todos os Artigos →
+        </a>
     </div>
 
     <div class="flex items-center justify-center pt-4">
