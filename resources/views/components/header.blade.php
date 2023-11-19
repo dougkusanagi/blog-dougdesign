@@ -2,7 +2,7 @@
     <div>
         <a aria-label="TailwindBlog" href="/">
             <div class="flex items-center justify-between">
-                <div class="mr-3">
+                {{-- <div class="mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="53.87"
                         height="43.61" viewBox="344.564 330.278 111.737 91.218">
                         <defs>
@@ -35,10 +35,10 @@
                         <use xlink:href="#logo_svg__a" fill="url(#logo_svg__b)"></use>
                         <use xlink:href="#logo_svg__c" fill="url(#logo_svg__d)"></use>
                     </svg>
-                </div>
+                </div> --}}
 
                 <div class="hidden h-6 text-2xl font-semibold sm:block">
-                    TailwindBlog
+                    Blog Doug Design
                 </div>
             </div>
         </a>
