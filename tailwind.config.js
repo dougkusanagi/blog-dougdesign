@@ -1,6 +1,8 @@
 // @ts-check
-const { fontFamily } = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
+import { fontFamily } from "tailwindcss/defaultTheme";
+import colors from "tailwindcss/colors";
+import typography from "@tailwindcss/typography";
+import forms from "@tailwindcss/forms";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -65,8 +67,5 @@ export default {
             }),
         },
     },
-    plugins: [
-        require("@tailwindcss/typography"),
-        require("@tailwindcss/forms"),
-    ],
+    plugins: [typography, forms],
 };
