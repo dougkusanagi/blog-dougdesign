@@ -1,6 +1,7 @@
 <?php
 
-use App\Livewire\Home;
+use App\Livewire\HomePageComponent;
+use App\Livewire\PostPageComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', Home::class);
+Route::get('/', HomePageComponent::class);
+
+Route::get('/{slug}', PostPageComponent::class);
