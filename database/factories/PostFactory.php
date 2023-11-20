@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\File;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
@@ -16,13 +17,11 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
-        $title = fake()->sentence();
-
         return [
-            'title' => $title,
-            'slug' => str($title)->slug(),
-            'body' => fake()->realText(1000),
-            'excerpt' => fake()->sentence(),
+            'title' => fake()->sentence(),
+            'slug' => fn ($attributes): string => str($attributes['title'])->slug(),
+            'body' => File::get(resource_path('markdown/benchmark.md')),
+            'excerpt' => fake()->paragraph(),
             'active' => rand(0, 1),
         ];
     }
