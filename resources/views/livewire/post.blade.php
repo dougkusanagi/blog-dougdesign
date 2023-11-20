@@ -46,8 +46,9 @@
                         <dd>
                             <ul
                                 class="flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
-                                <li class="flex items-center space-x-2"><img alt="avatar" loading="lazy" width="38"
-                                        height="38" decoding="async" data-nimg="1" class="w-10 h-10 rounded-full"
+                                <li class="flex items-center space-x-2"><img alt="avatar" loading="lazy"
+                                        width="38" height="38" decoding="async" data-nimg="1"
+                                        class="w-10 h-10 rounded-full"
                                         srcset="/_next/image?url=%2Fstatic%2Fimages%2Favatar.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Favatar.png&amp;w=96&amp;q=75 2x"
                                         src="/_next/image?url=%2Fstatic%2Fimages%2Favatar.png&amp;w=96&amp;q=75"
                                         style="color: transparent;">
@@ -67,9 +68,7 @@
 
                     <div class="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
                         <div class="pt-10 pb-8 prose max-w-none dark:prose-invert">
-                            {!! Str::markdown('# Introducing Multi-part Posts with Nested Routing') !!}
-
-                            {{ $post->body }}
+                            {!! Str::markdown($post->body) !!}
                         </div>
 
                         <div class="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300"><a target="_blank"
