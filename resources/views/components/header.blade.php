@@ -45,7 +45,7 @@
     </div>
 
     <div class="flex items-center space-x-4 leading-5 sm:space-x-6">
-        <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/blog">
+        {{-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/blog">
             Blog
         </a>
 
@@ -53,9 +53,9 @@
             Categorias
         </a>
 
-        {{-- <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/projects">
+        <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/projects">
             Projects
-        </a> --}}
+        </a>
 
         <a class="hidden font-medium text-gray-900 dark:text-gray-100 sm:block" href="/about">
             Sobre
@@ -66,8 +66,10 @@
                 stroke="currentColor" class="w-6 h-6 text-gray-900 dark:text-gray-100">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path>
-            </svg></button><button aria-label="Toggle Dark Mode">
+            </svg>
+        </button>
 
+        <button aria-label="Toggle Dark Mode">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                 class="w-6 h-6 text-gray-900 dark:text-gray-100">
                 <path fill-rule="evenodd"
@@ -81,7 +83,7 @@
                     d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
                     clip-rule="evenodd"></path>
             </svg>
-        </button>
+        </button> --}}
 
         <div
             class="fixed left-0 top-0 z-10 h-full w-full transform bg-white opacity-95 duration-300 ease-in-out dark:bg-gray-950 dark:opacity-[0.98] translate-x-full">
@@ -103,7 +105,7 @@
                     </a>
                 </div>
 
-                <div class="px-12 py-4">
+                {{-- <div class="px-12 py-4">
                     <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="/blog">
                         Blog
                     </a>
@@ -115,17 +117,17 @@
                     </a>
                 </div>
 
-                {{-- <div class="px-12 py-4">
+                <div class="px-12 py-4">
                     <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="/projects">
                         Projects
                     </a>
-                </div> --}}
+                </div>
 
                 <div class="px-12 py-4">
                     <a class="text-2xl font-bold tracking-widest text-gray-900 dark:text-gray-100" href="/about">
                         Sobre
                     </a>
-                </div>
+                </div> --}}
             </nav>
         </div>
     </div>

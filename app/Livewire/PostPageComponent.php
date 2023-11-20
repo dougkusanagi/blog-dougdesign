@@ -13,8 +13,7 @@ class PostPageComponent extends Component
     {
         $this->post = Post::query()
             ->where('slug', $slug)
-            ->where('published', true)
-            ->where('deleted_at', null)
+            ->active()
             ->with(['categories'])
             ->first();
 
@@ -23,6 +22,7 @@ class PostPageComponent extends Component
 
     public function render()
     {
-        return view('livewire.post');
+        return view('livewire.post')
+            ->title($this->post->title);
     }
 }

@@ -26,15 +26,20 @@
                     <div class="space-y-1 text-center">
                         <dl class="space-y-10">
                             <div>
-                                <dt class="sr-only">Published on</dt>
-                                <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400"><time
-                                        datetime="2021-05-02T00:00:00.000Z">Sunday, May 2, 2021</time></dd>
+                                <dt class="sr-only">Publicado em</dt>
+
+                                <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                                    <time datetime="{{ $post->created_at }}">
+                                        {{ $post->created_at->format('d/m/Y') }}
+                                    </time>
+                                </dd>
                             </div>
                         </dl>
                         <div>
                             <h1
                                 class="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
-                                Introducing Multi-part Posts with Nested Routing</h1>
+                                {{ $post->title }}
+                            </h1>
                         </div>
                     </div>
                 </header>
@@ -46,19 +51,22 @@
                         <dd>
                             <ul
                                 class="flex flex-wrap justify-center gap-4 sm:space-x-12 xl:block xl:space-x-0 xl:space-y-8">
-                                <li class="flex items-center space-x-2"><img alt="avatar" loading="lazy"
-                                        width="38" height="38" decoding="async" data-nimg="1"
-                                        class="w-10 h-10 rounded-full"
-                                        srcset="/_next/image?url=%2Fstatic%2Fimages%2Favatar.png&amp;w=48&amp;q=75 1x, /_next/image?url=%2Fstatic%2Fimages%2Favatar.png&amp;w=96&amp;q=75 2x"
-                                        src="/_next/image?url=%2Fstatic%2Fimages%2Favatar.png&amp;w=96&amp;q=75"
+                                <li class="flex items-center space-x-2">
+                                    <img alt="avatar" loading="lazy" width="38" height="38" decoding="async"
+                                        data-nimg="1" class="w-10 h-10 rounded-full"
+                                        src="https://pbs.twimg.com/profile_images/1565402558033698816/SneICrxj_400x400.jpg"
                                         style="color: transparent;">
+
                                     <dl class="text-sm font-medium leading-5 whitespace-nowrap">
                                         <dt class="sr-only">Name</dt>
-                                        <dd class="text-gray-900 dark:text-gray-100">Tails Azimuth</dd>
+                                        <dd class="text-gray-900 dark:text-gray-100">Douglas Lopes</dd>
                                         <dt class="sr-only">Twitter</dt>
-                                        <dd><a target="_blank" rel="noopener noreferrer"
-                                                href="https://twitter.com/Twitter"
-                                                class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">@Twitter</a>
+                                        <dd>
+                                            <a target="_blank" rel="noopener noreferrer"
+                                                href="https://twitter.com/DougLopesReal"
+                                                class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                                                @Twitter
+                                            </a>
                                         </dd>
                                     </dl>
                                 </li>
@@ -86,29 +94,43 @@
                             class="text-sm font-medium leading-5 divide-gray-200 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                             <div class="py-4 xl:py-8">
                                 <h2 class="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">Tags</h2>
-                                <div class="flex flex-wrap"><a
-                                        class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                                        href="/tags/multi-author">multi-author</a><a
-                                        class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                                        href="/tags/next-js">next-js</a><a
-                                        class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                                        href="/tags/feature">feature</a></div>
+
+                                <div class="flex flex-wrap">
+                                    @foreach ($post->categories as $category)
+                                        <a
+                                            class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                                            {{ $category->name }}
+                                        </a>
+                                    @endforeach
+                                </div>
                             </div>
-                            <div class="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
+
+                            {{-- <div class="flex justify-between py-4 xl:block xl:space-y-8 xl:py-8">
                                 <div>
                                     <h2 class="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
-                                        Previous Article</h2>
-                                    <div class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"><a
-                                            href="/blog/introducing-tailwind-nextjs-starter-blog">Introducing Tailwind
-                                            Nextjs Starter Blog</a></div>
+                                        Artigo Anterior
+                                    </h2>
+
+                                    <div class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                                        <a href="/blog/introducing-tailwind-nextjs-starter-blog">
+                                            Introducing Tailwind
+                                            Nextjs Starter Blog
+                                        </a>
+                                    </div>
                                 </div>
+
                                 <div>
-                                    <h2 class="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">Next
-                                        Article</h2>
-                                    <div class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"><a
-                                            href="/blog/new-features-in-v1">New features in v1</a></div>
+                                    <h2 class="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">
+                                        Próximo Artigo
+                                    </h2>
+
+                                    <div class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                                        <a href="/blog/new-features-in-v1">
+                                            New features in v1
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                         <div class="pt-4 xl:pt-8">
                             <a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"

@@ -5,19 +5,22 @@ namespace App\Livewire;
 use App\Models\Post;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 #[Title('Home - Blog Doug Design')]
 class HomePageComponent extends Component
 {
-    public $posts = [];
-
-    public function mount()
-    {
-        $this->posts = Post::latest()->take(3)->get();
-    }
+    use WithPagination;
 
     public function render()
     {
-        return view('livewire.home');
+        $posts = Post::query()
+            ->active()
+            ->latest()
+            ->paginate();
+
+        return view('livewire.home', [
+            'posts' => $posts
+        ]);
     }
 }

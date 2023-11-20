@@ -53,7 +53,7 @@
                                 <div class="text-base font-medium leading-6">
                                     <a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                                         aria-label='Read more: "Release of Tailwind Nextjs Starter Blog v2.0"'
-                                        href="/blog/release-of-tailwind-nextjs-starter-blog-v2.0">Ler mais →</a>
+                                        href="/{{ $post->slug }}">Ler mais →</a>
                                 </div>
                             </div>
                         </div>
@@ -64,11 +64,14 @@
     </div>
 
     <div class="flex justify-end text-base font-medium leading-6">
-        <a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" aria-label="All posts"
+        {{-- <a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" aria-label="All posts"
             href="/blog">
             Mais Artigos →
-        </a>
+        </a> --}}
+
+        {{ $posts->links() }}
     </div>
+
 
     <div class="flex items-center justify-center pt-4">
         <div>
