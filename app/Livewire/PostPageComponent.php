@@ -18,9 +18,7 @@ class PostPageComponent extends Component
             ->with(['categories'])
             ->first();
 
-        if (!$this->post) {
-            abort(404);
-        }
+        abort_if(!$this->post, 404);
     }
 
     public function render()
