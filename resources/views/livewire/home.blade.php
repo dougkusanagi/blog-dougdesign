@@ -13,7 +13,56 @@
         </div>
 
         <ul class="divide-y divide-gray-200 dark:divide-gray-700">
+            @foreach($posts as $post)
             <li class="py-12">
+                <article>
+                    <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
+                        <dl>
+                            <dt class="sr-only">Publicado em</dt>
+                            <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                                <time datetime="{{ $post->created_at }}">
+                                    {{ $post->created_at->format('d/m/Y') }}
+                                </time>
+                            </dd>
+                        </dl>
+
+                        <div class="space-y-5 xl:col-span-3">
+                            <div class="space-y-6">
+                                <div>
+                                    <h2 class="text-2xl font-bold leading-8 tracking-tight">
+                                        <a class="text-gray-900 dark:text-gray-100"
+                                            href="/blog/release-of-tailwind-nextjs-starter-blog-v2.0">
+                                            {{ $post->title }}
+                                        </a>
+                                    </h2>
+
+                                    <div class="flex flex-wrap">
+                                        @foreach ($post->categories as $category)
+                                        <a class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                                            href="/tags/next-js">
+                                            {{ $category->name }}
+                                        </a>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="prose text-gray-500 max-w-none dark:text-gray-400">
+                                    {{ $post->excerpt }}
+                                </div>
+                            </div>
+
+                            <div class="text-base font-medium leading-6">
+                                <a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                                    aria-label='Read more: "Release of Tailwind Nextjs Starter Blog v2.0"'
+                                    href="/blog/release-of-tailwind-nextjs-starter-blog-v2.0">Ler mais →</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </li>
+            @endforeach
+
+            {{-- <li class="py-12">
                 <article>
                     <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                         <dl>
@@ -73,14 +122,14 @@
                         </div>
                     </div>
                 </article>
-            </li>
+            </li> --}}
         </ul>
     </div>
 
     <div class="flex justify-end text-base font-medium leading-6">
         <a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400" aria-label="All posts"
             href="/blog">
-            Todos os Artigos →
+            Mais Artigos →
         </a>
     </div>
 
