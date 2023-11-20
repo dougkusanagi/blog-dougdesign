@@ -2,8 +2,8 @@
     <div class="flex flex-col items-center mt-16">
         <div class="flex mb-3 space-x-4">
             <a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer"
-                href="mailto:address@yoursite.com">
-                <span class="sr-only">mail</span>
+                href="mailto:dl.aguiar@yahoo.com.br">
+                <span class="sr-only">email</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                     class="w-6 h-6 text-gray-700 fill-current hover:text-primary-500 dark:text-gray-200 dark:hover:text-primary-400">
@@ -13,7 +13,7 @@
             </a>
 
             <a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer"
-                href="https://github.com">
+                href="https://github.com/dougkusanagi">
                 <span class="sr-only">github</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -25,7 +25,7 @@
             </a>
 
             <a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer"
-                href="https://facebook.com">
+                href="www.facebook.com/DougDesignReal">
                 <span class="sr-only">facebook</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -37,7 +37,7 @@
             </a>
 
             <a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer"
-                href="https://youtube.com">
+                href="https://www.youtube.com/@DougLopes">
                 <span class="sr-only">youtube</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -49,7 +49,7 @@
             </a>
 
             <a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer"
-                href="https://www.linkedin.com">
+                href="https://www.linkedin.com/in/douglaslopes/">
                 <span class="sr-only">linkedin</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -61,7 +61,7 @@
             </a>
 
             <a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer"
-                href="https://twitter.com/Twitter">
+                href="https://twitter.com/douglopesreal">
                 <span class="sr-only">twitter</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
