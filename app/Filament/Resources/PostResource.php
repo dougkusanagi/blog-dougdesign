@@ -57,6 +57,7 @@ class PostResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\Toggle::make('published')
                     ->label('Publicado')
+                    ->default(true)
                     ->required(),
                 // SpatieMediaLibraryFileUpload::make('images')
                 //     ->collection('images')
