@@ -22,10 +22,7 @@ class PostPageComponent extends Component
 
     public function render()
     {
-        return view('livewire.post', [
-            'title' => $this->post->title,
-            'description' => $this->post->description,
-        ])
+        return view('livewire.post')
             ->title($this->post->title);
     }
 }
