@@ -19,10 +19,11 @@ return new class extends Migration
             $table->text('body');
             $table->text('excerpt')->nullable();
 
-            $table->boolean('active')->default(true);
+            $table->boolean('published')->default(true);
 
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+            $table->softDeletes();
         });
     }
 

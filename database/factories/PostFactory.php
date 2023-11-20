@@ -22,7 +22,7 @@ class PostFactory extends Factory
             'slug' => fn ($attributes): string => str($attributes['title'])->slug(),
             'body' => File::get(resource_path('markdown/benchmark.md')),
             'excerpt' => fake()->paragraph(),
-            'active' => rand(0, 1),
+            'published' => rand(0, 1),
         ];
     }
 }
