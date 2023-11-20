@@ -68,7 +68,7 @@
 
                     <div class="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
                         <div class="pt-10 pb-8 prose max-w-none dark:prose-invert">
-                            {!! Str::markdown($post->body) !!}
+                            {!! Str::markdown($post->body) ?? '' !!}
                         </div>
 
                         <div class="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300"><a target="_blank"
