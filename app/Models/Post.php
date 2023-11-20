@@ -16,7 +16,7 @@ class Post extends Model
         'active' => 'boolean',
     ];
 
-    public function category(): BelongsToMany
+    public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class)->withTimestamps();
     }

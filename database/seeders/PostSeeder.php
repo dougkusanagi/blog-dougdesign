@@ -18,7 +18,7 @@ class PostSeeder extends Seeder
             ->create();
 
         $posts->each(function (Post $post) {
-            $post->category()->attach(
+            $post->categories()->attach(
                 Category::inRandomOrder()
                     ->limit(2)
                     ->get()
