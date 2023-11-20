@@ -3,6 +3,7 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 import colors from "tailwindcss/colors";
 import typography from "@tailwindcss/typography";
 import forms from "@tailwindcss/forms";
+import preset from "./vendor/filament/support/tailwind.config.preset";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -10,7 +11,11 @@ export default {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        "./app/Filament/**/*.php",
+        "./resources/views/filament/**/*.blade.php",
+        "./vendor/filament/**/*.blade.php",
     ],
+    preset: [preset],
     // darkMode: "class",
     theme: {
         extend: {

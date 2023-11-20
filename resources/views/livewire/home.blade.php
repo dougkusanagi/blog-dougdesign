@@ -13,7 +13,7 @@
         </div>
 
         <ul class="divide-y divide-gray-200 dark:divide-gray-700">
-            @foreach ($posts as $post)
+            @forelse ($posts as $post)
                 <li class="py-12">
                     <article>
                         <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
@@ -59,7 +59,14 @@
                         </div>
                     </article>
                 </li>
-            @endforeach
+            @empty
+                <div class="pt-6 pb-8 space-y-2 md:space-y-5">
+                    <h1
+                        class="text-lg text-center leading-9 tracking-tight text-gray-900 dark:text-gray-600 sm:text-4xl sm:leading-10 md:text-2xl md:leading-14">
+                        Nenhum artigo encontrado
+                    </h1>
+                </div>
+            @endforelse
         </ul>
     </div>
 
