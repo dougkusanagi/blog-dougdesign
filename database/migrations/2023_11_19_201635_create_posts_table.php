@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->unique();
             $table->text('body');
-            $table->text('excerpt')->nullable();
+            $table->text('teaser')->nullable();
 
             $table->boolean('published')->default(true);
 

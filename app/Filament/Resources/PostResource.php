@@ -52,7 +52,7 @@ class PostResource extends Resource
                     ->label('Conteúdo')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\Textarea::make('excerpt')
+                Forms\Components\Textarea::make('teaser')
                     ->label('Decrição')
                     ->columnSpanFull(),
                 Forms\Components\Toggle::make('published')

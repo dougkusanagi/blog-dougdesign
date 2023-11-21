@@ -177,7 +177,7 @@ return [
         'country'   => 'país',
         'date'      => 'data',
         'day'       => 'dia',
-        'excerpt'   => 'resumo',
+        'teaser'   => 'resumo',
         'first_name' => 'primeiro nome',
         'gender'    => 'gênero',
         'marital_status' => 'estado civil',

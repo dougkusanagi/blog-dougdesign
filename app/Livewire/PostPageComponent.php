@@ -24,7 +24,7 @@ class PostPageComponent extends Component
     {
         return view('livewire.post')
             ->layoutData([
-                'description' => $this->post->excerpt,
+                'description' => $this->post->teaser,
             ])
             ->title($this->post->title);
     }

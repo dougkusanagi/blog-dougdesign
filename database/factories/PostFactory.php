@@ -21,7 +21,7 @@ class PostFactory extends Factory
             'title' => fake()->sentence(),
             'slug' => fn ($attributes): string => str($attributes['title'])->slug(),
             'body' => File::get(resource_path('markdown/benchmark.md')),
-            'excerpt' => fake()->paragraph(),
+            'teaser' => fake()->paragraph(),
             'published' => rand(0, 1),
         ];
     }
