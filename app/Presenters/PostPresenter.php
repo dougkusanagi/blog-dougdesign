@@ -9,37 +9,37 @@ use Illuminate\Support\Carbon;
 
 class PostPresenter extends BasePresenter
 {
-    public function image() : ?string
+    public function image(): ?string
     {
         return $this->model->getFirstMedia('image')?->getAvailableFullUrl(['medium']);
     }
 
-    public function imagePreview() : ?string
+    public function imagePreview(): ?string
     {
         return $this->model->getFirstMedia('image')?->getAvailableFullUrl(['preview']);
     }
 
-    public function tree() : array
+    public function tree(): array
     {
         return (new Tree)->build($this->content());
     }
 
-    public function content() : string
+    public function content(): string
     {
         return Str::markdown($this->model->content ?? '');
     }
 
-    public function teaser() : string
+    public function teaser(): string
     {
         return Str::markdown($this->model->teaser ?? '');
     }
 
-    public function communityLinkDomain() : string
+    public function communityLinkDomain(): string
     {
         return str_replace('www.', '', Url::fromString($this->model->community_link)->getHost());
     }
 
-    public function lastUpdated() : string
+    public function lastUpdated(): string
     {
         $date = $this->model->manually_updated_at
             ?? $this->model->published_at
