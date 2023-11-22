@@ -50,14 +50,19 @@ return [
             'url'    => env('APP_URL') . '/media',
             'permissions' => [
                 'file' => [
-                    'public' => 0774,
+                    'public' => 0775,
                     'private' => 0600,
                 ],
                 'dir' => [
                     'public' => 0775,
                     'private' => 0700,
                 ],
-            ]
+            ],
+            'throw' => false,
+            'visibility' => 'public',
+            'options' => [
+                'Cache-Control' => 'max-age=31536000, no-transform, public',
+            ],
         ],
 
         's3' => [
