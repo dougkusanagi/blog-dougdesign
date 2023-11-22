@@ -18,7 +18,7 @@
                     <article>
                         <div class="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                             <dl>
-                                <dt class="sr-only">Publicado em</dt>
+                                <dt class="sr-only">Índice:</dt>
                                 <dd class="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                                     <time datetime="{{ $post->created_at }}">
                                         {{ $post->created_at->format('j \d\e F \d\e Y') }}
