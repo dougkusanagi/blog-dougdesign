@@ -2,9 +2,9 @@
 
 namespace App\Presenters;
 
+use App\Str;
 use App\Tree;
 use Spatie\Url\Url;
-use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 
 class PostPresenter extends BasePresenter

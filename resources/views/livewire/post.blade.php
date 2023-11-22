@@ -95,8 +95,9 @@
                                     alt="{{ $post->title }}" class="object-cover w-full aspect-video" />
                             @endif
 
-                            {{-- {!! Str::markdown($post->body) ?? '' !!} --}}
-                            {!! $post->presenter()->content() !!}
+                            <x-markdown>
+                                {!! $post->presenter()->content() !!}
+                            </x-markdown>
                         </div>
 
                         <div class="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300"><a target="_blank"
