@@ -2,9 +2,9 @@
 
 namespace App\Presenters;
 
-use App\Str;
 use App\Tree;
 use Spatie\Url\Url;
+use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
 
 class PostPresenter extends BasePresenter
@@ -26,7 +26,7 @@ class PostPresenter extends BasePresenter
 
     public function content(): string
     {
-        return Str::markdown($this->model->content ?? '');
+        return Str::markdown($this->model->body ?? '');
     }
 
     public function teaser(): string

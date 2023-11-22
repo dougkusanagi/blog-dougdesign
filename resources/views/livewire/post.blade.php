@@ -76,7 +76,22 @@
 
                     <div class="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
                         <div class="pt-10 pb-8 prose max-w-none dark:prose-invert">
-                            {!! Str::markdown($post->body) ?? '' !!}
+                            @if (!empty($post->presenter()->tree()))
+                                <p class="font-bold">Table of contents:</p>
+
+                                <ul>
+                                    @foreach ($post->presenter()->tree() as $branch)
+                                        <li>
+                                            <a href="#{{ Str::slug($branch['value']) }}">{{ $branch['value'] }}</a>
+
+                                            <x-post.tree.branch :branches="$branch['children']" />
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @endif
+
+                            {{-- {!! Str::markdown($post->body) ?? '' !!} --}}
+                            {!! $post->presenter()->content() !!}
                         </div>
 
                         <div class="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300"><a target="_blank"
@@ -97,10 +112,10 @@
 
                                 <div class="flex flex-wrap">
                                     @foreach ($post->categories as $category)
-                                    <a
-                                        class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
-                                        {{ $category->name }}
-                                    </a>
+                                        <a
+                                            class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                                            {{ $category->name }}
+                                        </a>
                                     @endforeach
                                 </div>
                             </div>

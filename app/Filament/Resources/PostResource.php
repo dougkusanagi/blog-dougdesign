@@ -9,6 +9,7 @@ use App\Models\Post;
 use Filament\Forms\Get;
 use Filament\Forms;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Forms\Set;
 use Filament\Resources\Resource;
@@ -35,30 +36,47 @@ class PostResource extends Resource
                     })
                     ->label('Titulo')
                     ->required(),
+
                 Forms\Components\TextInput::make('slug')
                     ->label('Url')
                     // ->readOnly()
                     ->required(),
+
                 Select::make('categories')
                     ->label('Categoria')
                     // ->options(Category::all()->pluck('name', 'id'))
                     ->relationship('categories', 'name')
                     ->preload()
-                    ->multiple()
-                    ->columnSpan([
-                        'lg' => 2,
-                    ]),
-                Forms\Components\MarkdownEditor::make('body')
-                    ->label('Conteúdo')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\Textarea::make('teaser')
-                    ->label('Decrição')
-                    ->columnSpanFull(),
+                    ->multiple(),
+
+                SpatieMediaLibraryFileUpload::make('image')
+                    ->collection('image')
+                    ->conversion('medium')
+                    ->disk('media')
+                    ->downloadable()
+                    ->imageCropAspectRatio('16:9')
+                    ->imageEditor()
+                    ->imageResizeMode('cover')
+                    ->imageResizeTargetHeight('1080')
+                    ->imageResizeTargetWidth('1920')
+                    ->visibility('public'),
+
                 Forms\Components\Toggle::make('published')
                     ->label('Publicado')
                     ->default(true)
                     ->required(),
+
+                Forms\Components\Textarea::make('teaser')
+                    ->label('Decrição')
+                    ->maxLength(65535)
+                    ->columnSpanFull()
+                    ->helperText('Uma visão geral do artigo usado no feed com a intenção de motivar os leitores a clicarem teste.'),
+
+                Forms\Components\MarkdownEditor::make('body')
+                    ->label('Conteúdo')
+                    ->required()
+                    ->columnSpanFull(),
+
                 // SpatieMediaLibraryFileUpload::make('images')
                 //     ->collection('images')
                 //     ->conversion('medium')
@@ -75,19 +93,29 @@ class PostResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\SpatieMediaLibraryImageColumn::make('image')
+                    ->collection('image')
+                    ->disk('media')
+                    ->circular(),
+
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
+
                 // Tables\Columns\TextColumn::make('slug')
                 //     ->searchable(),
+
                 Tables\Columns\ToggleColumn::make('published'),
+
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 Tables\Columns\TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()

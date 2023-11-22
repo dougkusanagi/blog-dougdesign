@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
         content="{{ $description ?? 'Junte-se a centenas de leitores e acelere seu aprendizado de programação.' }}" />
+    <meta name="application-name" content="{{ config('app.name') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <meta property="og:title" content="{{ $title ?? config('app.name') }}" />
     {{-- <meta property="og:image"
@@ -29,12 +31,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
 
+    @filamentStyles
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-white text-black antialiased dark:bg-gray-950 dark:text-white">
-    <section class="mx-auto max-w-3xl px-4 sm:px-6 xl:max-w-5xl xl:px-0">
-        <div class="flex h-screen flex-col justify-between font-sans">
+<body class="antialiased text-black bg-white dark:bg-gray-950 dark:text-white">
+    <section class="max-w-3xl px-4 mx-auto sm:px-6 xl:max-w-5xl xl:px-0">
+        <div class="flex flex-col justify-between h-screen font-sans">
             <x-header />
 
             <main class="mb-auto">
@@ -44,6 +47,10 @@
             <x-footer />
         </div>
     </section>
+
+    @livewire('notifications')
+    @filamentScripts
+    @vite('resources/js/app.js')
 </body>
 
 </html>

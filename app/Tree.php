@@ -14,7 +14,7 @@ class Tree
 {
     private array $stack = [];
 
-    public function build(string $html) : array
+    public function build(string $html): array
     {
         // Silent errors about invalid tags.
         libxml_use_internal_errors(true);
@@ -45,7 +45,7 @@ class Tree
         return $tree;
     }
 
-    private function processHeading(DOMElement $heading) : void
+    private function processHeading(DOMElement $heading): void
     {
         $level = (int) substr($heading->tagName, 1) - 1;
 
