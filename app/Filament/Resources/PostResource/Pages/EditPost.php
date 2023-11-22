@@ -13,7 +13,10 @@ class EditPost extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
-            Actions\DeleteAction::make(),
+            Actions\DeleteAction::make()
+                ->outlined()
+                ->label('Excluir')
+                ->keyBindings('Ctrl+D'),
         ];
     }
 }
