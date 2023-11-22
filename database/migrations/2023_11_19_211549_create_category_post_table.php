@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('category_post', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignIdFor(Category::class)->constrained();
-            $table->foreignIdFor(Post::class)->constrained();
+            $table->foreignIdFor(Category::class);
+            $table->foreignIdFor(Post::class);
 
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
