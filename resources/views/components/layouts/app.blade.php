@@ -34,6 +34,7 @@
     @filamentStyles
     @vite('resources/css/app.css')
 
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VNXK1N5QD"></script>
     <script>
