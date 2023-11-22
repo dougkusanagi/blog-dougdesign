@@ -2,6 +2,7 @@
 
 use App\Livewire\HomePageComponent;
 use App\Livewire\PostPageComponent;
+use App\Livewire\PrivacyPolicyComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,4 +18,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomePageComponent::class);
 
-Route::get('/{slug}', PostPageComponent::class);
+Route::get('/privacy-policy', PrivacyPolicyComponent::class)->name('privacy-policy');
+
+Route::get('/{slug}', PostPageComponent::class)->name('post');
