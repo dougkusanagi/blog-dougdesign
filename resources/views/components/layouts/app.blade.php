@@ -12,7 +12,7 @@
     <meta property="og:title" content="{{ $title ?? config('app.name') }}" />
     {{-- <meta property="og:image"
         content="{{ $image ?? 'https://i.useflipp.com/gw6mxpkgy4v8.png?title=' . urlencode($title ?? '') . '&body=' . urlencode($description ?? '') . '&watermark=useflipp.com' }}" /> --}}
-    <meta property="og:image" content="/images/og-image.png" />
+    <meta property="og:image" content="{{ $image ?? '/images/og-image.png' }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ url()->current() }}" />
 

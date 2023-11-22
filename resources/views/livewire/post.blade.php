@@ -90,6 +90,11 @@
                                 </ul>
                             @endif
 
+                            @if ($image = $post->presenter()->image())
+                                <img loading="lazy" src="{{ $image }}" width="1000" height="562"
+                                    alt="{{ $post->title }}" class="object-cover w-full aspect-video" />
+                            @endif
+
                             {{-- {!! Str::markdown($post->body) ?? '' !!} --}}
                             {!! $post->presenter()->content() !!}
                         </div>

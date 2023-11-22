@@ -70,7 +70,7 @@ class PostResource extends Resource
                     ->label('Decrição')
                     ->maxLength(65535)
                     ->columnSpanFull()
-                    ->helperText('Uma visão geral do artigo usado no feed com a intenção de motivar os leitores a clicarem teste.'),
+                    ->helperText('Uma visão geral do artigo usado no feed com a intenção de motivar os leitores a clicarem.'),
 
                 Forms\Components\MarkdownEditor::make('body')
                     ->label('Conteúdo')

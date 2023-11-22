@@ -23,6 +23,16 @@
                                     <time datetime="{{ $post->created_at }}">
                                         {{ $post->created_at->format('j \d\e F \d\e Y') }}
                                     </time>
+
+                                    @if ($post->presenter()->image())
+                                        <a class="text-gray-900 dark:text-gray-100" href="/{{ $post->slug }}"
+                                            wire:navigate.hover>
+                                            <img loading="lazy"
+                                                src="{{ $post->presenter()->image() ?? Vite::asset('resources/img/placeholder.jpg') }}"
+                                                width="1000" width="562" alt="{{ $post->title }}"
+                                                class="object-cover pt-4 pr-6 mb-4 aspect-video" />
+                                        </a>
+                                    @endif
                                 </dd>
                             </dl>
 
@@ -30,7 +40,8 @@
                                 <div class="space-y-6">
                                     <div>
                                         <h2 class="text-2xl font-bold leading-8 tracking-tight">
-                                            <a class="text-gray-900 dark:text-gray-100" href="/{{ $post->slug }}">
+                                            <a class="text-gray-900 dark:text-gray-100" href="/{{ $post->slug }}"
+                                                wire:navigate.hover>
                                                 {{ $post->title }}
                                             </a>
                                         </h2>

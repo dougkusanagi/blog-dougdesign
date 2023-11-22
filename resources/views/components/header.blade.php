@@ -1,6 +1,6 @@
 <header class="flex items-center justify-between py-10">
     <div>
-        <a aria-label="TailwindBlog" href="/">
+        <a aria-label="TailwindBlog" href="/" wire:navigate>
             <div class="flex items-center justify-between">
                 {{-- <div class="mr-3">
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="53.87"
