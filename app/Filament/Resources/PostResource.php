@@ -84,9 +84,9 @@ class PostResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\SpatieMediaLibraryImageColumn::make('image')
+                    ->label('Imagem')
                     ->collection('image')
-                    ->disk('media')
-                    ->circular(),
+                    ->disk('media'),
 
                 Tables\Columns\TextColumn::make('title')
                     ->label('Nome')
