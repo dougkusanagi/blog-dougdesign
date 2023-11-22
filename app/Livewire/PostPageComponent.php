@@ -22,10 +22,6 @@ class PostPageComponent extends Component
 
     public function render()
     {
-        // if ($this->post->id === 1) {
-        //     dd($this->post->getFirstMedia('image')?->getAvailableFullUrl(['preview']));
-        // }
-
         return view('livewire.post')
             ->layoutData([
                 'description' => $this->post->teaser,

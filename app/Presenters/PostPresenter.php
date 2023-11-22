@@ -19,11 +19,6 @@ class PostPresenter extends BasePresenter
         return $this->model->getFirstMedia('image')?->getAvailableFullUrl(['preview']);
     }
 
-    public function originalImage()
-    {
-        return $this->model->getFirstMedia('image');
-    }
-
     public function tree(): array
     {
         return (new Tree)->build($this->content());

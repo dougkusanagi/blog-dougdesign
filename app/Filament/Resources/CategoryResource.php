@@ -31,10 +31,16 @@ class CategoryResource extends Resource
                             $set('slug', str($state)->slug());
                         }
                     })
+                    ->label('Nome')
                     ->required(),
+
                 Forms\Components\TextInput::make('slug')
+                    ->label('Url')
                     ->required(),
+
                 Forms\Components\Toggle::make('active')
+                    ->label('Ativo')
+                    ->default(true)
                     ->required(),
             ]);
     }
@@ -44,15 +50,20 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Nome')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug')
+                    ->label('Url')
                     ->searchable(),
-                Tables\Columns\ToggleColumn::make('active'),
+                Tables\Columns\ToggleColumn::make('active')
+                    ->label('Ativo'),
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Publicado em')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Atualizado em')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

@@ -76,16 +76,6 @@ class PostResource extends Resource
                     ->label('Conteúdo')
                     ->required()
                     ->columnSpanFull(),
-
-                // SpatieMediaLibraryFileUpload::make('images')
-                //     ->collection('images')
-                //     ->conversion('medium')
-                //     ->disk('media-library')
-                //     ->downloadable()
-                //     ->imageEditor()
-                //     ->imageResizeMode('cover')
-                //     ->multiple()
-                //     ->visibility('public'),
             ]);
     }
 
@@ -99,19 +89,23 @@ class PostResource extends Resource
                     ->circular(),
 
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Nome')
                     ->searchable(),
 
                 // Tables\Columns\TextColumn::make('slug')
                 //     ->searchable(),
 
-                Tables\Columns\ToggleColumn::make('published'),
+                Tables\Columns\ToggleColumn::make('published')
+                    ->label('Publicado'),
 
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Publicado em')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Atualizado em')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
