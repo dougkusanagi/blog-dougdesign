@@ -77,7 +77,7 @@
                     <div class="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
                         <div class="pt-10 pb-8 prose max-w-none dark:prose-invert">
                             @if (!empty($post->presenter()->tree()))
-                                <p class="font-bold">Table of contents:</p>
+                                <p class="font-bold">Índice:</p>
 
                                 <ul>
                                     @foreach ($post->presenter()->tree() as $branch)
