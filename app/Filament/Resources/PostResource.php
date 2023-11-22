@@ -4,6 +4,7 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\PostResource\Pages;
 use App\Filament\Resources\PostResource\RelationManagers;
+use App\Filament\Resources\PostResource\RelationManagers\CategoriesRelationManager;
 use App\Models\Category;
 use App\Models\Post;
 use Filament\Forms\Get;
@@ -39,15 +40,13 @@ class PostResource extends Resource
 
                 Forms\Components\TextInput::make('slug')
                     ->label('Url')
-                    // ->readOnly()
                     ->required(),
 
-                Select::make('categories')
-                    ->label('Categoria')
-                    // ->options(Category::all()->pluck('name', 'id'))
-                    ->relationship('categories', 'name')
-                    ->preload()
-                    ->multiple(),
+                // Select::make('categories')
+                //     ->label('Categoria')
+                //     ->relationship('categories', 'name')
+                //     ->preload()
+                //     ->multiple(),
 
                 SpatieMediaLibraryFileUpload::make('image')
                     ->collection('image')
@@ -131,7 +130,7 @@ class PostResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            CategoriesRelationManager::class,
         ];
     }
 
