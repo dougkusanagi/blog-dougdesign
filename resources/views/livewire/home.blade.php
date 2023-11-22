@@ -24,13 +24,13 @@
                                         {{ $post->created_at->format('j \d\e F \d\e Y') }}
                                     </time>
 
-                                    @if ($post->presenter()->image())
+                                    @if ($post->presenter()->imagePreview())
                                         <a class="text-gray-900 dark:text-gray-100" href="/{{ $post->slug }}"
                                             wire:navigate.hover>
                                             <img loading="lazy"
-                                                src="{{ $post->presenter()->image() ?? Vite::asset('resources/img/placeholder.jpg') }}"
+                                                src="{{ $post->presenter()->imagePreview() ?? Vite::asset('resources/img/placeholder.jpg') }}"
                                                 width="1000" width="562" alt="{{ $post->title }}"
-                                                class="object-cover pt-4 pr-6 mb-4 aspect-video" />
+                                                class="object-cover pt-1 pr-6 mb-4 aspect-video" />
                                         </a>
                                     @endif
                                 </dd>
