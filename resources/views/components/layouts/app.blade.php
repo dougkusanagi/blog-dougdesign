@@ -46,6 +46,10 @@
 
         gtag('config', 'G-6VNXK1N5QD');
     </script>
+
+    {{-- Google AdSense --}}
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5927498436558135"
+        crossorigin="anonymous"></script>
 </head>
 
 <body class="antialiased text-black bg-white dark:bg-gray-950 dark:text-white">
