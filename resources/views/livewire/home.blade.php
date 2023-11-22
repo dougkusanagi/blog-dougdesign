@@ -64,7 +64,7 @@
                                 <div class="text-base font-medium leading-6">
                                     <a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                                         aria-label='Read more: "Release of Tailwind Nextjs Starter Blog v2.0"'
-                                        href="/{{ $post->slug }}">Ler mais →</a>
+                                        href="/{{ $post->slug }}" livewire:navigate>Ler mais →</a>
                                 </div>
                             </div>
                         </div>
