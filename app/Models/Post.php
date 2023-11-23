@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use App\Console\Commands\GenerateSitemap;
 use App\Presenters\PostPresenter;
+use App\Services\GenerateSitemapService;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -23,7 +23,7 @@ class Post extends Model implements HasMedia
 
     protected static function booted(): void
     {
-        static::created(fn () => GenerateSitemap::dispatch());
+        static::created(fn () => GenerateSitemapService::handle());
     }
 
     public function categories(): BelongsToMany
