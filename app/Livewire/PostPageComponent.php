@@ -9,10 +9,9 @@ class PostPageComponent extends Component
 {
     public $post;
 
-    public function mount(string $slug)
+    public function mount(Post $post)
     {
-        $this->post = Post::query()
-            ->where('slug', $slug)
+        $this->post = $post
             ->active()
             ->with(['categories'])
             ->first();
