@@ -27,7 +27,6 @@ class GenerateSitemap extends Command
      */
     public function handle()
     {
-        $generate_sitemap_service = new GenerateSitemapService();
-        $generate_sitemap_service->handle();
+        GenerateSitemapService::handle();
     }
 }

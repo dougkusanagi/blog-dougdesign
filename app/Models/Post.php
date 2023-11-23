@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Console\Commands\GenerateSitemap;
 use App\Presenters\PostPresenter;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Builder;
@@ -19,6 +20,11 @@ class Post extends Model implements HasMedia
     protected $casts = [
         'active' => 'boolean',
     ];
+
+    protected static function booted(): void
+    {
+        static::created(fn () => GenerateSitemap::dispatch());
+    }
 
     public function categories(): BelongsToMany
     {

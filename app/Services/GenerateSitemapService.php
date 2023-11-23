@@ -9,7 +9,7 @@ use Spatie\Sitemap\Tags\Url;
 
 class GenerateSitemapService
 {
-    public function handle()
+    public static function handle()
     {
         $path = public_path('sitemap.xml');
         $url = config('app.url', 'http://blog.dougdesign.com.br');
