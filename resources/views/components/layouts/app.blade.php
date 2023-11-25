@@ -33,24 +33,6 @@
 
     @filamentStyles
     @vite('resources/css/app.css')
-
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VNXK1N5QD"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-
-        gtag('config', 'G-6VNXK1N5QD');
-    </script>
-
-    <!-- Google Adsense -->
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5927498436558135"
-        crossorigin="anonymous"></script>
 </head>
 
 <body class="antialiased text-black bg-white dark:bg-gray-950 dark:text-white">
@@ -69,6 +51,23 @@
     @livewire('notifications')
     @filamentScripts
     @vite('resources/js/app.js')
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6VNXK1N5QD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-6VNXK1N5QD');
+    </script>
+
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5927498436558135"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
