@@ -27,11 +27,6 @@ class Post extends Model implements HasMedia
         static::deleted(fn () => GenerateSitemapService::handle());
     }
 
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
-
     public function categories(): BelongsToMany
     {
         return $this->belongsToMany(Category::class)->withTimestamps();
