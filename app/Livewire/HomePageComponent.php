@@ -16,6 +16,7 @@ class HomePageComponent extends Component
     {
         $posts = Post::query()
             ->active()
+            ->with(['categories'])
             ->latest()
             ->paginate();
 
