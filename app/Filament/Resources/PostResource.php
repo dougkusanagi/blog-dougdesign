@@ -98,13 +98,13 @@ class PostResource extends Resource
                     ->label('Publicado'),
 
                 Tables\Columns\TextColumn::make('created_at')
-                    ->label('Publicado em')
+                    ->label('Data de criação')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->label('Atualizado em')
+                    ->label('Data de atualização')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
