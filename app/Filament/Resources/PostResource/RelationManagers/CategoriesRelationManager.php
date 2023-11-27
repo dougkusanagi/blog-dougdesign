@@ -19,8 +19,18 @@ class CategoriesRelationManager extends RelationManager
         return $form
             ->schema([
                 Forms\Components\TextInput::make('name')
+                    ->label('Nome')
                     ->required()
                     ->maxLength(255),
+
+                Forms\Components\TextInput::make('slug')
+                    ->label('Url')
+                    ->required()
+                    ->maxLength(255),
+
+                Forms\Components\Toggle::make('active')
+                    ->label('Ativo')
+                    ->default(true),
             ]);
     }
 
