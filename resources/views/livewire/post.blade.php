@@ -123,7 +123,8 @@
                         <div
                             class="text-sm font-medium leading-5 divide-gray-200 dark:divide-gray-700 xl:col-start-1 xl:row-start-2 xl:divide-y">
                             <div class="py-4 xl:py-8">
-                                <h2 class="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">Tags</h2>
+                                <h2 class="text-xs tracking-wide text-gray-500 uppercase dark:text-gray-400">Categorias
+                                </h2>
 
                                 <div class="flex flex-wrap">
                                     @foreach ($post->categories as $category)
