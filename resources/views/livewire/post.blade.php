@@ -64,7 +64,7 @@
                                         <dd>
                                             <a target="_blank" rel="noopener noreferrer"
                                                 href="https://twitter.com/DougLopesReal"
-                                                class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                                                class="text-primary-600 dark:text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                                                 @Twitter
                                             </a>
                                         </dd>
@@ -100,14 +100,23 @@
                             </x-markdown>
                         </div>
 
-                        <div class="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300"><a target="_blank"
-                                rel="nofollow"
+                        {{-- <div class="pt-6 pb-6 text-sm text-gray-700 dark:text-gray-300">
+                            <a target="_blank" rel="nofollow"
                                 href="https://mobile.twitter.com/search?q=https%3A%2F%2Ftailwind-nextjs-starter-blog.vercel.app%2Fblog%2Fnested-route%2Fintroducing-multi-part-posts-with-nested-routing">Discuss
-                                on Twitter</a> • <a target="_blank" rel="noopener noreferrer"
-                                href="https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/main/data/blog/nested-route/introducing-multi-part-posts-with-nested-routing.mdx">View
-                                on GitHub</a></div>
-                        <div class="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300" id="comment"><button>Load
-                                Comments</button></div>
+                                on Twitter
+                            </a>
+                            •
+                            <a target="_blank" rel="noopener noreferrer"
+                                href="https://github.com/timlrx/tailwind-nextjs-starter-blog/blob/main/data/blog/nested-route/introducing-multi-part-posts-with-nested-routing.mdx">
+                                View on GitHub
+                            </a>
+                        </div>
+
+                        <div class="pt-6 pb-6 text-center text-gray-700 dark:text-gray-300" id="comment">
+                            <button>
+                                Load Comments
+                            </button>
+                        </div> --}}
                     </div>
 
                     <footer>
