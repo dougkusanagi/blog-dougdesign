@@ -4,6 +4,7 @@ namespace App\Filament\Resources\PostResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Forms\Set;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
@@ -21,7 +22,11 @@ class CategoriesRelationManager extends RelationManager
                 Forms\Components\TextInput::make('name')
                     ->label('Nome')
                     ->required()
-                    ->maxLength(255),
+                    ->maxLength(255)
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(function (Set $set, $state) {
+                        $set('slug', str($state)->slug());
+                    }),
 
                 Forms\Components\TextInput::make('slug')
                     ->label('Url')

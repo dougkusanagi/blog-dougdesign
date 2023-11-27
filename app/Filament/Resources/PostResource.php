@@ -30,13 +30,12 @@ class PostResource extends Resource
         return $form
             ->schema([
                 Forms\Components\TextInput::make('title')
-                    ->afterStateUpdated(function (Get $get, Set $set, ?string $state) {
-                        if (!$get('is_slug_changed_manually') && filled($state)) {
-                            $set('slug', str($state)->slug());
-                        }
-                    })
                     ->label('Titulo')
-                    ->required(),
+                    ->required()
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(function (Set $set, $state) {
+                        $set('slug', str($state)->slug());
+                    }),
 
                 Forms\Components\TextInput::make('slug')
                     ->label('Url')

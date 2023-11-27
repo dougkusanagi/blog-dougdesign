@@ -51,7 +51,11 @@ class CategoryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->label('Nome')
-                    ->searchable(),
+                    ->searchable()
+                    ->live(onBlur: true)
+                    ->afterStateUpdated(function (Set $set, $state) {
+                        $set('slug', str($state)->slug());
+                    }),
                 Tables\Columns\TextColumn::make('slug')
                     ->label('Url')
                     ->searchable(),
