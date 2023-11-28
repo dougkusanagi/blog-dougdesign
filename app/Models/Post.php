@@ -24,6 +24,7 @@ class Post extends Model implements HasMedia
     protected static function booted(): void
     {
         static::created(fn () => GenerateSitemapService::handle());
+        static::updated(fn () => GenerateSitemapService::handle());
         static::deleted(fn () => GenerateSitemapService::handle());
     }
 
