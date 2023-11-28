@@ -41,12 +41,6 @@ class PostResource extends Resource
                     ->label('Url')
                     ->required(),
 
-                // Select::make('categories')
-                //     ->label('Categoria')
-                //     ->relationship('categories', 'name')
-                //     ->preload()
-                //     ->multiple(),
-
                 SpatieMediaLibraryFileUpload::make('image')
                     ->collection('image')
                     ->conversion('medium')
@@ -90,26 +84,23 @@ class PostResource extends Resource
                     ->label('Nome')
                     ->searchable(),
 
-                // Tables\Columns\TextColumn::make('slug')
-                //     ->searchable(),
-
                 Tables\Columns\ToggleColumn::make('published')
                     ->label('Publicado'),
 
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Data de criação')
-                    ->dateTime()
+                    ->dateTime('d/m/Y H:i:s')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 Tables\Columns\TextColumn::make('updated_at')
                     ->label('Data de atualização')
-                    ->dateTime()
+                    ->dateTime('d/m/Y H:i:s')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 Tables\Columns\TextColumn::make('deleted_at')
-                    ->dateTime()
+                    ->dateTime('d/m/Y H:i:s')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
