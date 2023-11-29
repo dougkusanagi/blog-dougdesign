@@ -128,8 +128,8 @@
 
                                 <div class="flex flex-wrap">
                                     @foreach ($post->categories as $category)
-                                        <a
-                                            class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                                        <a class="mr-3 text-sm font-medium uppercase text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                                            href="/categories/{{ $category->slug }}">
                                             {{ $category->name }}
                                         </a>
                                     @endforeach
