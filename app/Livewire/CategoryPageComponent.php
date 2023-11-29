@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use App\Models\Category;
 use App\Models\Post;
 use Livewire\Component;
 
@@ -18,6 +19,7 @@ class CategoryPageComponent extends Component
     {
         $posts = Post::query()
             ->whereHas('categories', fn ($query) => $query->where('slug', $this->slug))
+            ->with(['categories'])
             ->active()
             ->latest()
             ->paginate();
