@@ -10,6 +10,10 @@ class GenerateSitemapService
 {
     public static function handle()
     {
+        if (config('app.env') !== 'production') {
+            return;
+        }
+
         $url = config('app.url', 'http://blog.dougdesign.com.br');
         $sitemap = Sitemap::create();
         $path = public_path('sitemap.xml');
