@@ -166,7 +166,7 @@
                         <div class="pt-4 xl:pt-8">
                             <a class="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                                 aria-label="Back to the blog" href="{{ route('home') }}">
-                                ← Back to the blog</a>
+                                ← Página inicial</a>
                         </div>
                     </footer>
                 </div>

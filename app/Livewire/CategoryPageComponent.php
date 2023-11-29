@@ -24,7 +24,7 @@ class CategoryPageComponent extends Component
 
         abort_if(!$posts, 404);
 
-        return view('livewire.category-page-component', [
+        return view('livewire.category/filter', [
             'posts' => $posts
         ]);
     }
