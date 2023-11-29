@@ -25,7 +25,7 @@
             </a>
 
             <a class="text-sm text-gray-500 transition hover:text-gray-600" target="_blank" rel="noopener noreferrer"
-                href="www.facebook.com/DougDesignReal">
+                href="https://www.facebook.com/DougDesignReal">
                 <span class="sr-only">facebook</span>
 
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
