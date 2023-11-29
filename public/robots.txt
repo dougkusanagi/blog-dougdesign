@@ -1,2 +1,3 @@
 User-agent: *
 Disallow:
+Sitemap: https://blog.dougdesign.com.br/sitemap.xml
