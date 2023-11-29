@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomePageComponent::class);
+Route::get('/', HomePageComponent::class)->name('home');
 
 Route::get('/privacy-policy', PrivacyPolicyComponent::class)->name('privacy-policy');
 
