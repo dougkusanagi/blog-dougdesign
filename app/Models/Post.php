@@ -30,12 +30,14 @@ class Post extends Model implements HasMedia
 
     public function categories(): BelongsToMany
     {
-        return $this->belongsToMany(Category::class)->withTimestamps();
+        return $this->belongsToMany(Category::class)
+            ->withTimestamps();
     }
 
     public function scopeActive(Builder $query): void
     {
-        $query->where('published', true)->where('deleted_at', null);
+        $query->where('published', true)
+            ->where('deleted_at', null);
     }
 
     public function presenter(): PostPresenter
