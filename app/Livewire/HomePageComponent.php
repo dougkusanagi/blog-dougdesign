@@ -14,11 +14,13 @@ class HomePageComponent extends Component
 
     public function render()
     {
-        $posts = Post::query()
-            ->active()
-            ->with(['categories'])
-            ->latest()
-            ->paginate();
+        $posts = cache()->remember('posts', now()->addHour(), function () {
+            return Post::query()
+                ->active()
+                ->with(['categories'])
+                ->latest()
+                ->paginate();
+        });
 
         return view('livewire.home', [
             'posts' => $posts
