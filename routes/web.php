@@ -23,4 +23,4 @@ Route::get('/categories/{slug}', CategoryPageComponent::class)->name('categories
 
 Route::get('/privacy-policy', PrivacyPolicyComponent::class)->name('privacy-policy');
 
-Route::get('/{slug}', PostPageComponent::class)->name('post');
+Route::get('/post/{slug}', PostPageComponent::class)->name('posts.show');

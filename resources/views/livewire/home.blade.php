@@ -25,8 +25,8 @@
                                     </time>
 
                                     @if ($post->presenter()->imagePreview())
-                                        <a class="text-gray-900 dark:text-gray-100" href="/{{ $post->slug }}"
-                                            wire:navigate.hover>
+                                        <a class="text-gray-900 dark:text-gray-100"
+                                            href="{{ route('posts.show', $post->slug) }}" wire:navigate.hover>
                                             <img loading="lazy"
                                                 src="{{ $post->presenter()->imagePreview() ?? Vite::asset('resources/img/placeholder.jpg') }}"
                                                 width="1000" width="562" alt="{{ $post->title }}"
@@ -40,8 +40,8 @@
                                 <div class="space-y-6">
                                     <div>
                                         <h2 class="text-2xl font-bold leading-8 tracking-tight">
-                                            <a class="text-gray-900 dark:text-gray-100" href="/{{ $post->slug }}"
-                                                wire:navigate.hover>
+                                            <a class="text-gray-900 dark:text-gray-100"
+                                                href="{{ route('posts.show', $post->slug) }}" wire:navigate.hover>
                                                 {{ $post->title }}
                                             </a>
                                         </h2>

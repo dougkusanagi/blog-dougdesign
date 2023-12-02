@@ -18,7 +18,11 @@ class CategoryPageComponent extends Component
     public function render()
     {
         $posts = Post::query()
-            ->whereHas('categories', fn ($query) => $query->where('slug', $this->slug))
+            ->whereBelongsTo(
+                Category::query()
+                    ->where('slug', $this->slug)
+                    ->first()
+            )
             ->with(['categories'])
             ->active()
             ->latest()
