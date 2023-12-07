@@ -8,20 +8,29 @@ use Spatie\Sitemap\Tags\Url;
 
 class GenerateSitemapService
 {
-    public static function handle()
+    public static function handle(): bool
     {
-        $url = config('app.url', 'http://blog.dougdesign.com.br');
         $sitemap = Sitemap::create();
-        $path = public_path('sitemap.xml');
 
-        Post::all()->each(function ($post) use ($url, $sitemap) {
-            $sitemap->add(
-                Url::create($url . '/' . $post->slug)
-                    ->setPriority(0.9)
-                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
-            );
-        });
+        $posts = Post::active()->get();
 
-        $sitemap->writeToFile($path);
+        if ($posts->isEmpty()) {
+            throw new \Exception('Nenhum post ativo encontrado');
+        }
+
+        $posts
+            ->each(function ($post) use ($sitemap) {
+                $sitemap->add(
+                    Url::create(route('posts.show', $post->slug))
+                        ->setPriority(0.9)
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                );
+            });
+
+        $sitemap->writeToFile(
+            public_path('sitemap.xml')
+        );
+
+        return true;
     }
 }

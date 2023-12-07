@@ -27,6 +27,12 @@ class GenerateSitemap extends Command
      */
     public function handle()
     {
-        GenerateSitemapService::handle();
+        try {
+            GenerateSitemapService::handle();
+
+            $this->info('Sitemap gerado com sucesso');
+        } catch (\Throwable $th) {
+            $this->error($th->getMessage());
+        }
     }
 }
